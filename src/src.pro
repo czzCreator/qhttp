@@ -27,6 +27,18 @@ win32:DEFINES *= QHTTP_STATIC_LIB_BUILD
 PRJDIR    = ..
 include($$PRJDIR/commondir.pri)
 
+## detail here ...... how to use the switch macro
+## //#if QHTTP_MEMORY_LOG > 0
+##  // define QHTTP_LINE_LOG fprintf(stderr, "%s(): obj = %p    @ %s[%d]\n", __FUNCTION__, this, __FILE__, __LINE__);
+##else
+##   define QHTTP_LINE_LOG
+##endif
+##if QHTTP_MEMORY_LOG > 1
+##   define QHTTP_LINE_DEEPLOG QHTTP_LINE_LOG
+##else
+##   define QHTTP_LINE_DEEPLOG
+##endif
+##
 DEFINES       *= QHTTP_MEMORY_LOG=0
 #win32:DEFINES *= QHTTP_EXPORT
 
